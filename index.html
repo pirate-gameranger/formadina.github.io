@@ -1,10 +1,11 @@
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>For Madina</title>
   
-  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-  <script src="js/jquery-3.5.0.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
 <style type="text/css">
@@ -18,32 +19,79 @@ body{
 	max-height: 100vh;
 }
 .wrapp{
-	max-width:100%; 
-	max-height: 100vh;
+	width:100%; 
+	height: 100vh;
 	padding-top: 25%;
+	text-align: center;
+	background-image: url('7.jpg');
+	background-repeat: no-repeat;
+	opacity: 0.8;
+	background-size: 100%;
 }
 .main{
 	max-width: 100%;
-	text-align: center;
-	font-size: 70px;
+	font-size: 40px;
 	font-weight: bold;
 	color:#E16AC9;
-	transition: 0.5s all;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
 }
-.main:hover{
-	transform: scale(1.4);
-	
+img{
+	max-width: 100%;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width:600px;
+    opacity: 0.6;
 }
+
+
 </style>
 
 <div class="wrapp">
+	<img src="2.png">
   <div class="main">
     Madina, you are the best!
   </div>
 </div>
-
+ 
 <script type="text/javascript">
-	
+
+
+
+var colors_font = ['#CB69FF', '#8CF5FF', '#FFEA82', '#B1AAFF'];
+var colors_bg = ['#FFB9FA', '#A0AEFF', '#ECFFA0', '#FFBD91'];
+let cycle = setInterval(function(){
+	$('img').animate({
+		width: '800px'
+	},800,function(){
+	$('img').animate({
+		width: '600px'
+	},800);
+	});
+	$('body').animate({
+		backgroundColor: colors_bg[Math.floor(Math.random() * 4)]
+	},800,function(){
+	$('body').animate({
+		backgroundColor: colors_bg[Math.floor(Math.random() * 4)]
+	},800);
+	});
+  $('.main').animate({
+  	color: colors_font[Math.floor(Math.random() * 4)],
+    fontSize: "60px"
+  }, 800,function(){
+  	$('.main').animate({
+  		color: colors_font[Math.floor(Math.random() * 4)],
+    fontSize: "40px",
+  }, 800);
+});
+}, 1600);
+
 
 </script>
 </body>
